@@ -1,5 +1,5 @@
 "use client" //Como estamos trabalhando em um Server component, para utilizar hooks(que são Client Components, é necessário adicionar essa tag para indicar o uso de Clients Components)
-import {BsFillMoonStarsFill} from 'react-icons/bs';
+import {BsFillMoonStarsFill, BsFillSunFill} from 'react-icons/bs';
 import {AiFillTwitterCircle, AiFillLinkedin, AiFillYoutube } from 'react-icons/ai';
 import Image from 'next/image';
 import perfil from '../../public/perfil.png';
@@ -10,8 +10,6 @@ import proj1 from '../../public/proj1.png';
 import proj2 from '../../public/proj2.png';
 import proj3 from '../../public/proj3.png';
 import {useState} from 'react';
-
-
 
 
 export default function Home() {
@@ -26,7 +24,8 @@ export default function Home() {
           <h1 className='text-xl font-burtons dark:text-white'>DEVELOPED BY LEONARDO BRIENZA</h1>
             <ul className='flex items-center'>
               <li>
-                <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className='cursor-pointer' /> 
+                {darkMode === true ? <BsFillSunFill onClick={() => setDarkMode(!darkMode)} className='cursor-pointer h-8 w-8 text-yellow-400'  />
+                 : <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className='cursor-pointer h-8 w-8 text-gray-500' /> }
               </li>
               <li>
                 <a className='bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8' href='#'>Resume</a>
