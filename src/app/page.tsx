@@ -16,8 +16,35 @@ export default function Home() {
 
   const [darkMode, setDarkMode] = useState(false);
 
+  const cards = [
+    {
+      id: 1,
+      src: proj1,
+    },
+    {
+      id: 2,
+      src: proj2,
+    },
+    {
+      id: 3,
+      src: proj3,
+    },
+    {
+      id: 4,
+      src: proj1,
+    },
+    {
+      id: 5,
+      src: proj1,
+    },
+    {
+      id: 6,
+      src: proj3,
+    }
+]
+
   return (
-    <div className={darkMode ? 'dark' : ""}> {/* Se a classe darkMode for verdadeira, irá acrescentar dark na classe, se não, irá tira-la */}
+    <div className={darkMode ? 'dark' : ""}>{/* Se a classe darkMode for verdadeira, irá acrescentar dark na classe, se não, irá tira-la */}
       <main className=' bg-white px-10 md:px-20 lg:px-40 dark:bg-gray-900'>
         <section className="min-h-screen">
           <nav className='py-10 mb-12 flex justify-between'>
@@ -25,7 +52,7 @@ export default function Home() {
             <ul className='flex items-center'>
               <li>
                 {darkMode === true ? <BsFillSunFill onClick={() => setDarkMode(!darkMode)} className='cursor-pointer h-8 w-8 text-yellow-400'  />
-                 : <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className='cursor-pointer h-8 w-8 text-gray-500' /> }
+                 : <BsFillMoonStarsFill onClick={() => setDarkMode(!darkMode)} className='cursor-pointer h-6 w-6 text-gray-500' /> }
               </li>
               <li>
                 <a className='bg-gradient-to-r from-cyan-500 to-teal-500 text-white px-4 py-2 rounded-md ml-8' href='#'>Resume</a>
@@ -52,7 +79,6 @@ export default function Home() {
             <Image alt='perfil' src={perfil}  objectFit='cover'/>
           </div>
         </section>
-        
         {/* Cards */}
         <section>
           <div >
@@ -70,7 +96,7 @@ export default function Home() {
           </div>
           <div className='lg:flex gap-10'>
             {/* Primeiro Card */}
-            <div className='text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white'>
+            <div className='text-center shadow-lg p-10 rounded-xl my-10 hover:scale-95 dark:bg-slate-100'>
               <Image className='mx-auto' src={camadas} alt='camadas' width={100} height={100} />
               <h3 className='text-lg font-medium pt-8 pb-2'>
                 Beautiful Designs
@@ -86,7 +112,7 @@ export default function Home() {
               <p className='text-gray-800'>Figma</p>
             </div>
             {/* Segundo Card */}
-            <div className='text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white'>
+            <div className='text-center shadow-lg p-10 rounded-xl my-10 hover:scale-95 dark:bg-slate-100 '>
               <Image className='mx-auto' src={cubinho} alt='camadas' width={100} height={100} />
               <h3 className='text-lg font-medium pt-8 pb-2'>
                 Beautiful Designs
@@ -102,7 +128,7 @@ export default function Home() {
               <p className='text-gray-800'>Figma</p>
             </div>
             {/* Terceiro Card */}
-            <div className='text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white'>
+            <div className='text-center shadow-lg p-10 rounded-xl my-10 hover:scale-95 dark:bg-slate-100'>
               <Image className='mx-auto' src={tela} alt='camadas' width={100} height={100} />
               <h3 className='text-lg font-medium pt-8 pb-2'>
                 Beautiful Designs
@@ -117,38 +143,29 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Portforio Cards */}
         <section>
-          <div>
-            <h3 className='text-3xl py-1 dark:text-white'>
-              Portforio
-            </h3>
-            <p className='text-md py-2 leading-8 text-gray-800 dark:text-white'>
-              Since the beginning of my journey as a freel developer, I've done remote work
-              <span className='text-teal-500'> agencies</span> consulted for
-              <span className='text-teal-500'> startups</span> for both business and consumer use.
-            </p>
-            <p className='text-md py-2 leading-8 text-gray-800 dark:text-white'>
-              I offer from a wide range of services, including programming and teaching.
-            </p>
-          </div>
-          <div className='flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap'>
-            <div className='basis-1/3 flex-1'>
-              <Image alt='projeto1' src={proj1} className='rounded-lg object-cover' style={{height: '100%', width: '100%'}} layout='resposive'/>
-            </div>
-            <div className='basis-1/3 flex-1'>
-              <Image alt='projeto2' src={proj2} className='rounded-lg object-cover' style={{height: '100%', width: '100%'}} layout='resposive'/>
-            </div>
-            <div className='basis-1/3 flex-1'>
-              <Image alt='projeto3' src={proj3} className='rounded-lg object-cover' style={{height: '100%', width: '100%'}} layout='resposive'/>
-            </div>
-            <div className='basis-1/3 flex-1'>
-              <Image alt='projeto3' src={proj3} className='rounded-lg object-cover' style={{height: '100%', width: '100%'}} layout='resposive'/>
-            </div>
-            <div className='basis-1/3 flex-1'>
-              <Image alt='projeto3' src={proj3} className='rounded-lg object-cover' style={{height: '100%', width: '100%'}} layout='resposive'/>
-            </div>
-            <div className='basis-1/3 flex-1'>
-              <Image alt='projeto3' src={proj3} className='rounded-lg object-cover' style={{height: '100%', width: '100%'}} layout='resposive'/>
+          <div className='w-full md:h-screen'>
+            <div className='max-w-screen p-4 mx-auto flex flex-col justify-center w-full h-full'>
+              <div className='pb-8'>
+                <h3 className='text-3xl py-1 dark:text-white'>Portforio</h3>
+                <p>Check out some of my work right here</p>
+              </div>
+            <div className='grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:px-0'>
+            {
+              cards.map(({id, src}) => (
+                  <div key={id} className='shadow-md shadow-gray-600 rounded-lg'>
+                    <Image alt='' src={src} className='rounded-t-lg duration-200 hover:scale-105 hover:rounded-lg object-cover' style={{height: '30vh', width: '60vh'}} layout='resposive' />
+                    <div className='flex items-center justify-center shadow-md shadow-gray-500 rounded-b-lg dark:bg-slate-200'>
+                      <button className='w-1/2 px-6 py-3 duration-200 m-4 hover:scale-125'>Demo</button>
+                      <button className='w-1/2 px-6 py-3 duration-200 m-4 hover:scale-125'>Code</button>
+                    </div>
+                  </div>
+              ))
+            } 
+
+            </div>        
             </div>
           </div>
         </section>
@@ -156,3 +173,43 @@ export default function Home() {
     </div>
   )
 }
+
+
+      // <div>
+      //    <h3 className='text-3xl py-1 dark:text-white'>
+      //         Portforio
+      //       </h3>
+      //       <p className='text-md py-2 leading-8 text-gray-800 dark:text-white'>
+      //         Since the beginning of my journey as a freel developer, I've done remote work
+      //         <span className='text-teal-500'> agencies</span> consulted for
+      //         <span className='text-teal-500'> startups</span> for both business and consumer use.
+      //       </p>
+      //       <p className='text-md py-2 leading-8 text-gray-800 dark:text-white'>
+      //         I offer from a wide range of services, including programming and teaching.
+      //       </p>
+      //     </div>
+      //     {/* Projects */}
+      //     <div className='flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap'>
+      //       <div className='basis-1/3 flex-1 shadow-md shadow-gray-600'>
+      //         <Image alt='projeto1' src={proj1} className='object-cover' style={{height: '100%', width: '100%'}} layout='resposive'/>
+      //         <div className='flex items-center justify-center rounded-lg'>
+      //           <button className='w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105'>Demo</button>
+      //           <button className='w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105'>Code</button>
+      //         </div>
+      //       </div>
+      //       <div className='basis-1/3 flex-1'>
+      //         <Image alt='projeto2' src={proj2} className='rounded-lg object-cover' style={{height: '100%', width: '100%'}} layout='resposive'/>
+      //       </div>
+      //       <div className='basis-1/3 flex-1'>
+      //         <Image alt='projeto3' src={proj3} className='rounded-lg object-cover' style={{height: '100%', width: '100%'}} layout='resposive'/>
+      //       </div>
+      //       <div className='basis-1/3 flex-1'>
+      //         <Image alt='projeto3' src={proj3} className='rounded-lg object-cover' style={{height: '100%', width: '100%'}} layout='resposive'/>
+      //       </div>
+      //       <div className='basis-1/3 flex-1'>
+      //         <Image alt='projeto3' src={proj3} className='rounded-lg object-cover' style={{height: '100%', width: '100%'}} layout='resposive'/>
+      //       </div>
+      //       <div className='basis-1/3 flex-1'>
+      //         <Image alt='projeto3' src={proj3} className='rounded-lg object-cover' style={{height: '100%', width: '100%'}} layout='resposive'/>
+      //       </div>
+      //     </div>
